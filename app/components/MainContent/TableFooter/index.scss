@@ -1,0 +1,24 @@
+.table-footer {
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem 0;
+  background-color: var(--background-primary);
+
+  .pagination {
+    display: flex;
+    margin-right: 1rem;
+    color: var(--light-tertiary-grey);
+
+    b {
+      color: var(--color-primary);
+    }
+
+    .arrow-right {
+      transform: rotatey(180deg);
+    }
+  }
+
+  .total-items {
+    color: var(--light-tertiary-grey)
+  }
+}

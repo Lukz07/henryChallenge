@@ -3,9 +3,17 @@
 @tailwind utilities;
 
 :root {
+  --light-surface: #FFFFFF;
+  --light-strike: #E6E6E6;
+  --light-primary-grey: #000;
+  --light-tertiary-grey: #999;
+  --light-cuaternary-grey: #B8B8B8;
+  --light-base: #F2F2F2;
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-primary: var(--light-surface);
+  --background-primary-main-container: var(--light-base);
+  --color-primary: var(--light-primary-grey);
+  font-family: 'Avenir';
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,11 +25,7 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--light-primary-grey));
+  background: var(--background-primary);
+  font-family: 'Avenir';
 }
