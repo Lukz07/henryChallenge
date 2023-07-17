@@ -14,9 +14,12 @@ interface Tour {
 }
 
 const TableFilter = ({ setRanking }: {setRanking: any}) => {
+  const DEFAULT_TOUR_TEXT = 'Tour';
+  const DEFAULT_SEASON_TEXT = 'Season';
+
   const [tours, setTours] = useState<Tour[] | null>();
-  const [toursName, setToursName] = useState<Option[]>([{text: 'Tour', id: 0}]);
-  const [season, setSeason] = useState<Option[]>([{text: 'Season', id: 0}]);
+  const [toursName, setToursName] = useState<Option[]>([{text: DEFAULT_TOUR_TEXT, id: 0}]);
+  const [season, setSeason] = useState<Option[]>([{text: DEFAULT_SEASON_TEXT, id: 0}]);
 
   useEffect(() => {
     loadTours(setTours);
@@ -52,6 +55,8 @@ const TableFilter = ({ setRanking }: {setRanking: any}) => {
   const handleOnChange = () => {
     const seasonId = document.querySelector(".season-filter .season-button")?.dataset.id;
     const tourId = document.querySelector(".tour-filter .tour-button")?.dataset.id;
+
+    if (tourId == 0 || seasonId == 0) return;
 
     loadTourRankings({season_id: seasonId, tour_id: tourId}, setRanking, 1);
   }

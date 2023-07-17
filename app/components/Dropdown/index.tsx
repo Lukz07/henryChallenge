@@ -26,7 +26,7 @@ const Dropdown = ({
 }: Dropdown) => {
 
   const [titleText, setTitleText] = useState<string | null | undefined>(title);
-  const [titleId, setTitleId] = useState<number>(1)
+  const [titleId, setTitleId] = useState<number>(0)
 
   useEffect(() => {
     onChange();

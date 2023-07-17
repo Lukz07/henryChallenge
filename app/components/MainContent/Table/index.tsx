@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect } from "react";
 import TableFooter from "../TableFooter";
 import "./index.scss";
 
@@ -20,6 +21,9 @@ interface TableProps {
 }
 
 const Table = ({rankingTours, setRanking}: {rankingTours: TableProps | undefined, setRanking: any}) => {
+  useEffect(() => {
+    console.log("TABLE - RANKING TOURS: ", rankingTours)
+  })
   return (
     <div className="leaderboard-table w-full">
       <table className="leaderboard-table-main table-auto">
